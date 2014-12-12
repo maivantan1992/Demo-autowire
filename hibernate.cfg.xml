@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+       <!--  <property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">root</property>
+        <property name="hibernate.connection.url">jdbc:mysql://hcut2025c:33060/cqp_prime</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property> -->
+        <mapping class="com.sample.entity.Access" />
+        <mapping class="com.sample.entity.Timesheet" />
+        <mapping class="com.sample.entity.UserLog" />
+        <mapping class="com.sample.entity.Bu" />
+        <mapping class="com.sample.entity.SmtSolutionGroup" />
+        <mapping class="com.sample.entity.TimesheetStore" />
+        <mapping class="com.sample.entity.Groups" />
+        <mapping class="com.sample.entity.Holidays" />
+        <mapping class="com.sample.entity.SmtUserSolutionGroup" />
+        <mapping class="com.sample.entity.SmtMonthlyLevelData" />
+        <mapping class="com.sample.entity.User" />
+        <mapping class="com.sample.entity.Department" />
+        <mapping class="com.sample.entity.Section" />
+        <mapping class="com.sample.entity.TimesheetTemp" />
+    </session-factory>
+</hibernate-configuration>

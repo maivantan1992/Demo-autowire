@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="cqp_prime" match-name="access"/>
+  <table-filter match-catalog="cqp_prime" match-name="bu"/>
+  <table-filter match-catalog="cqp_prime" match-name="department"/>
+  <table-filter match-catalog="cqp_prime" match-name="groups"/>
+  <table-filter match-catalog="cqp_prime" match-name="holidays"/>
+  <table-filter match-catalog="cqp_prime" match-name="section"/>
+  <table-filter match-catalog="cqp_prime" match-name="smt_monthly_level_data"/>
+  <table-filter match-catalog="cqp_prime" match-name="smt_solution_group"/>
+  <table-filter match-catalog="cqp_prime" match-name="smt_user_solution_group"/>
+  <table-filter match-catalog="cqp_prime" match-name="timesheet"/>
+  <table-filter match-catalog="cqp_prime" match-name="timesheet_store"/>
+  <table-filter match-catalog="cqp_prime" match-name="timesheet_temp"/>
+  <table-filter match-catalog="cqp_prime" match-name="user"/>
+  <table-filter match-catalog="cqp_prime" match-name="user_log"/>
+</hibernate-reverse-engineering>

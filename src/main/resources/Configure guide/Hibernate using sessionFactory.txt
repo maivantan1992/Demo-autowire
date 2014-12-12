@@ -1,0 +1,11 @@
+Hibernate using sessionFactory
+
+- Dependencies:
+	+ hibernate-core
+	+ hibernate-entitymanager
+- Config:
+	+ sessionFactory: AnnotationSessionFactoryBean
+		#dataSource
+		#packagesToScan
+		[#hibernateProperties]
+	+ transactionManager: HibernateTransactionManager
