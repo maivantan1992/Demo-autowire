@@ -12,9 +12,6 @@ public class UserManagerImp implements IUserManager {
 	@Autowired
 	IUserDAO userDAO;
 
-	public UserManagerImp() {
-	}
-
 	public User getById(Integer userId) {
 		return userDAO.getById(userId);
 	}

@@ -22,4 +22,13 @@ public class HBSpBasicDAO<E, PK extends Serializable> extends
 	public E get(PK id) {
 		return this.getHibernateTemplate().get(this.persistentClass, id);
 	}
+	
+	public PK insert(E entity)
+	{
+		PK genaratedKey = null;
+		genaratedKey = (PK) this.getHibernateTemplate().save(entity);
+		return genaratedKey;
+	}
+	
+	
 }
