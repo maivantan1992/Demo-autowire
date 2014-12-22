@@ -15,6 +15,7 @@
 		<slf4j.version>1.5.10</slf4j.version>
 		<java.version>1.7</java.version>
 		<junit.version>4.8.2</junit.version>
+		<tomcat.dir>D:/Tool_DEV/apache-tomcat-7.0.53-service</tomcat.dir>
 	</properties>
 	<dependencies>
 		<!-- Bean Validation Dependencies -->
@@ -202,7 +203,7 @@
 					<scanIntervalSeconds>3</scanIntervalSeconds>
 				</configuration>
 			</plugin>
-			<!-- Ensures we are compiling at 1.6 level -->
+			<!-- Ensures we are compiling at 1.7 level -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -234,4 +235,129 @@
 			</plugin>
 		</plugins>
 	</build>
+	
+	<!-- Use profile build -->
+	<profiles>
+	  <!-- Profile1 -->
+      <profile>
+      <id>profile1</id>
+      <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.7</version>
+            <executions>  
+	            <execution>
+					<id>id.prepare-package</id>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<echo>in prepare-package phase (14 of 21)</echo>
+							<echo>Change profileName value in db.properties</echo>
+							<echo>${basedir}/src/main/resources/db.properties</echo>
+							<propertyfile file="${basedir}/src/main/resources/db.properties">
+							  <entry  key="profileName" value="test set key - profile1"/>
+							</propertyfile>
+						</target>					 
+					</configuration>
+				</execution>
+				<execution>
+					<id>id.install</id>
+					<phase>install</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<!-- Deploy tomcat: copy - paste -->
+							<echo>Deploy tomcat: copy - paste</echo>
+		                    <!-- stop tomcat -->
+		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/shutdown.bat" failonerror="false">
+		                        <arg line="" />
+		                    </exec>
+		                    <!-- give Tomcat some time to shut down -->
+		                    <sleep seconds="1"/>
+		                    <!-- delete the web application folder -->
+		                    <delete dir="${tomcat.dir}/webapps/${project.name}" />
+		                    <!-- copy the new war file to Tomcat and overwrite an existing file -->
+		                    <copy file="${basedir}\target\${project.name}.war" todir="${tomcat.dir}/webapps" overwrite="true"
+		                        failonerror="true" />
+		                    <!-- start tomcat -->
+		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/startup.bat" failonerror="true">
+		                        <arg line="" />
+		                    </exec>
+						</target>
+					</configuration>
+				</execution>
+			</executions>  
+         </plugin>
+      </plugins>
+      </build>
+      </profile>
+      
+      <!-- Profile 2 -->
+      <profile>
+      <id>profile2</id>
+      <build>
+      <plugins>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>1.7</version>
+            <executions>  
+	            <execution>
+					<id>id.prepare-package</id>
+					<phase>prepare-package</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<echo>in prepare-package phase (14 of 21)</echo>
+							<echo>Change profileName value in db.properties</echo>
+							<echo>${basedir}/src/main/resources/db.properties</echo>
+							<propertyfile file="${basedir}/src/main/resources/db.properties">
+							  <entry  key="profileName" value="test set key - profile2"/>
+							</propertyfile>
+						</target>					 
+					</configuration>
+				</execution>
+				<execution>
+					<id>id.install</id>
+					<phase>install</phase>
+					<goals>
+						<goal>run</goal>
+					</goals>
+					<configuration>
+						<target>
+							<!-- Deploy tomcat: copy - paste -->
+							<echo>Deploy tomcat: copy - paste</echo>
+		                    <!-- stop tomcat -->
+		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/shutdown.bat" failonerror="false">
+		                        <arg line="" />
+		                    </exec>
+		                    <!-- give Tomcat some time to shut down -->
+		                    <sleep seconds="1"/>
+		                    <!-- delete the web application folder -->
+		                    <delete dir="${tomcat.dir}/webapps/${project.name}" />
+		                    <!-- copy the new war file to Tomcat and overwrite an existing file -->
+		                    <copy file="${basedir}\target\${project.name}.war" todir="${tomcat.dir}/webapps" overwrite="true"
+		                        failonerror="true" />
+		                    <!-- start tomcat -->
+		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/startup.bat" failonerror="true">
+		                        <arg line="" />
+		                    </exec>
+						</target>
+					</configuration>
+				</execution>
+			</executions>  
+         </plugin>
+      </plugins>
+      </build>
+      </profile>
+   </profiles>
 </project>
