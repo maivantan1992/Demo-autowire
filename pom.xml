@@ -15,7 +15,7 @@
 		<slf4j.version>1.5.10</slf4j.version>
 		<java.version>1.7</java.version>
 		<junit.version>4.8.2</junit.version>
-		<tomcat.dir>D:/Tool_DEV/apache-tomcat-7.0.53-service</tomcat.dir>
+		<!-- <tomcat.dir>D:/Tool_DEV/apache-tomcat-7.0.53-service</tomcat.dir> -->
 	</properties>
 	<dependencies>
 		<!-- Bean Validation Dependencies -->
