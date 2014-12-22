@@ -227,7 +227,7 @@
 				<artifactId>tomcat7-maven-plugin</artifactId>
 				<version>2.2</version>
 				<configuration>
-					<url>http://localhost:7080/manager/text</url>
+					<url>http://hcut2601c:7080/manager/text</url>
 					<server>TomcatServer</server>
 					<path>/Demo-Autowire</path>
 				</configuration>
