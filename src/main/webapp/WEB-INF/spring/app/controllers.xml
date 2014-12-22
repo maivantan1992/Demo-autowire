@@ -16,4 +16,7 @@
 	<!-- <mvc:resources location="/resources/" mapping="/resources/**" /> -->
 	<!-- <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"
 		/> -->
+	<bean id="placeholderConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location" value="classpath:db.properties" />
+	</bean>
 </beans>

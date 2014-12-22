@@ -3,6 +3,7 @@ package com.sample.controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,8 @@ public class HomeController {
 	@Autowired
 	ISectionManager sectionManager;
 	
+	@Value("${profileName}")
+    private String profileName;
 	/**
 	 * Selects the home page and populates the model with a message
 	 */
@@ -35,7 +38,7 @@ public class HomeController {
 	public String home(Model model) {
 		logger.info("Welcome home!");
 		model.addAttribute("controllerMessage",
-				"This is the message from the controller!");
+				"This is the message from the controller! <br>"+profileName);
 		//User user = userManager.getById(1);
 		//System.out.println("User email: "+ user.getEmployeeEmail());
 		Section section = sectionManager.getById(228);
