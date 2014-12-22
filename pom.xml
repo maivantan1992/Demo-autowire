@@ -259,8 +259,8 @@
 						<target>
 							<echo>in prepare-package phase (14 of 21)</echo>
 							<echo>Change profileName value in db.properties</echo>
-							<echo>${basedir}/src/main/resources/db.properties</echo>
-							<propertyfile file="${basedir}/src/main/resources/db.properties">
+							<echo>${basedir}/target/classes/db.properties</echo>
+							<propertyfile file="${basedir}/target/classes/db.properties">
 							  <entry  key="profileName" value="test set key - profile11111111111"/>
 							</propertyfile>
 						</target>					 
@@ -334,9 +334,9 @@
 						<target>
 							<echo>in prepare-package phase (14 of 21)</echo>
 							<echo>Change profileName value in db.properties</echo>
-							<echo>${basedir}/src/main/resources/db.properties</echo>
-							<propertyfile file="${basedir}/src/main/resources/db.properties">
-							  <entry  key="profileName" value="test set key - profile2222222222222"/>
+							<echo>${basedir}/target/classes/db.properties</echo>
+							<propertyfile file="${basedir}/target/classes/db.properties">
+							  <entry  key="profileName" value="test set key - profile222222222"/>
 							</propertyfile>
 						</target>					 
 					</configuration>
