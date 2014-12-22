@@ -229,8 +229,8 @@
 				<version>2.2</version>
 				<configuration>
 					<url>http://hcut2601c:7080/manager/text</url>
-					<server>TomcatServer</server>
-					<path>/Demo-Autowire</path>
+					<server>TomcatServer7-Local</server>
+					<path>/${project.name}</path>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -243,6 +243,7 @@
       <id>profile1</id>
       <build>
       <plugins>
+         <!-- Custom build -->
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
@@ -260,11 +261,12 @@
 							<echo>Change profileName value in db.properties</echo>
 							<echo>${basedir}/src/main/resources/db.properties</echo>
 							<propertyfile file="${basedir}/src/main/resources/db.properties">
-							  <entry  key="profileName" value="test set key - profile1"/>
+							  <entry  key="profileName" value="test set key - profile11111111111"/>
 							</propertyfile>
 						</target>					 
 					</configuration>
 				</execution>
+				<!-- 
 				<execution>
 					<id>id.install</id>
 					<phase>install</phase>
@@ -273,28 +275,40 @@
 					</goals>
 					<configuration>
 						<target>
-							<!-- Deploy tomcat: copy - paste -->
+							//Deploy tomcat: copy - paste 
 							<echo>Deploy tomcat: copy - paste</echo>
-		                    <!-- stop tomcat -->
+		                    //stop tomcat 
 		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/shutdown.bat" failonerror="false">
 		                        <arg line="" />
 		                    </exec>
-		                    <!-- give Tomcat some time to shut down -->
+		                   //give Tomcat some time to shut down
 		                    <sleep seconds="1"/>
-		                    <!-- delete the web application folder -->
+		                    //delete the web application folder
 		                    <delete dir="${tomcat.dir}/webapps/${project.name}" />
-		                    <!-- copy the new war file to Tomcat and overwrite an existing file -->
+		                    //copy the new war file to Tomcat and overwrite an existing file
 		                    <copy file="${basedir}\target\${project.name}.war" todir="${tomcat.dir}/webapps" overwrite="true"
 		                        failonerror="true" />
-		                    <!-- start tomcat -->
+		                    //start tomcat
 		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/startup.bat" failonerror="true">
 		                        <arg line="" />
 		                    </exec>
 						</target>
 					</configuration>
 				</execution>
+				-->
 			</executions>  
          </plugin>
+         <!-- Deploy plugin -->
+		<plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<url>http://hcut2601c:7080/manager/text</url>
+				<server>TomcatServer7-Local</server>
+				<path>/${project.name}</path>
+			</configuration>
+		</plugin>
       </plugins>
       </build>
       </profile>
@@ -303,7 +317,8 @@
       <profile>
       <id>profile2</id>
       <build>
-      <plugins>
+     <plugins>
+         <!-- Custom build -->
          <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-antrun-plugin</artifactId>
@@ -321,41 +336,24 @@
 							<echo>Change profileName value in db.properties</echo>
 							<echo>${basedir}/src/main/resources/db.properties</echo>
 							<propertyfile file="${basedir}/src/main/resources/db.properties">
-							  <entry  key="profileName" value="test set key - profile2"/>
+							  <entry  key="profileName" value="test set key - profile2222222222222"/>
 							</propertyfile>
 						</target>					 
 					</configuration>
 				</execution>
-				<execution>
-					<id>id.install</id>
-					<phase>install</phase>
-					<goals>
-						<goal>run</goal>
-					</goals>
-					<configuration>
-						<target>
-							<!-- Deploy tomcat: copy - paste -->
-							<echo>Deploy tomcat: copy - paste</echo>
-		                    <!-- stop tomcat -->
-		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/shutdown.bat" failonerror="false">
-		                        <arg line="" />
-		                    </exec>
-		                    <!-- give Tomcat some time to shut down -->
-		                    <sleep seconds="1"/>
-		                    <!-- delete the web application folder -->
-		                    <delete dir="${tomcat.dir}/webapps/${project.name}" />
-		                    <!-- copy the new war file to Tomcat and overwrite an existing file -->
-		                    <copy file="${basedir}\target\${project.name}.war" todir="${tomcat.dir}/webapps" overwrite="true"
-		                        failonerror="true" />
-		                    <!-- start tomcat -->
-		                    <exec dir="${tomcat.dir}" executable="${tomcat.dir}/bin/startup.bat" failonerror="true">
-		                        <arg line="" />
-		                    </exec>
-						</target>
-					</configuration>
-				</execution>
 			</executions>  
          </plugin>
+         <!-- Deploy plugin -->
+		<plugin>
+			<groupId>org.apache.tomcat.maven</groupId>
+			<artifactId>tomcat7-maven-plugin</artifactId>
+			<version>2.2</version>
+			<configuration>
+				<url>http://hcut2601c:7080/manager/text</url>
+				<server>TomcatServer7-Local</server>
+				<path>/${project.name}</path>
+			</configuration>
+		</plugin>
       </plugins>
       </build>
       </profile>
