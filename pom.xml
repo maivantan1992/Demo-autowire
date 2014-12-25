@@ -307,6 +307,7 @@
 				<url>http://hcut2601c:7080/manager/text</url>
 				<server>TomcatServer7-Local</server>
 				<path>/${project.name}</path>
+				<update>true</update>
 			</configuration>
 		</plugin>
       </plugins>
@@ -352,6 +353,7 @@
 				<url>http://hcut2601c:7080/manager/text</url>
 				<server>TomcatServer7-Local</server>
 				<path>/${project.name}</path>
+				<update>true</update>
 			</configuration>
 		</plugin>
       </plugins>
