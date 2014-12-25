@@ -48,6 +48,7 @@ public class HomeController {
 		//Integer sectionId = sectionManager.insert(section2);
 		
 		//Commmit
+		
 		return "home";
 	}
 
