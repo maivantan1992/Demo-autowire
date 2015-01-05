@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/sample/DAO/IUserDAOJPARepo.java|com/sample/DAO/UserJAPRepo.java|com/sample/DAO/JPABasicDAO.java|com/sample/DAO/UserJPADAO.java|com/sample/DAO/JDBCBasicDAO.java|com/sample/DAO/UserJDBCDAO.java|com/sample/dao/IUserDAOJPARepo.java|com/sample/dao/JDBCBasicDAO.java|com/sample/dao/JPABasicDAO.java|com/sample/dao/UserJDBCDAO.java|com/sample/dao/UserJPADAO.java|com/sample/dao/UserJPARepo.java|com/sample/dao/HBBasicDAO.java|com/sample/dao/UserHBDAO.java" kind="src" output="target/classes" path="src/main/java">
+	<classpathentry excluding="com/sample/dao/HBBasicDAO.java|com/sample/dao/UserJPARepo.java|com/sample/dao/UserJPADAO.java|com/sample/dao/UserJDBCDAO.java|com/sample/dao/UserHBDAO.java|com/sample/dao/JPABasicDAO.java|com/sample/dao/JDBCBasicDAO.java|com/sample/dao/IUserDAOJPARepo.java" kind="src" output="target/classes" path="src/main/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
 			<attribute name="maven.pomderived" value="true"/>
@@ -30,7 +30,7 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="owner.project.facets" value="java"/>
+			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="target/classes"/>
