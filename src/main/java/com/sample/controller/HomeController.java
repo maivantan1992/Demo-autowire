@@ -45,10 +45,7 @@ public class HomeController {
 		System.out.println("Section : "+ section.getSection());
 		
 		//Section section2 = new Section(section.getBu(), "TEST", section.getDepartments());
-		//Integer sectionId = sectionManager.insert(section2);
-	
-		
-		
+		//Integer sectionId = sectionManager.insert(section2);		
 		return "home";
 	}
 
