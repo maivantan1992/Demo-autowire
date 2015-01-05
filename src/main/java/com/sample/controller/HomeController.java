@@ -46,8 +46,7 @@ public class HomeController {
 		
 		//Section section2 = new Section(section.getBu(), "TEST", section.getDepartments());
 		//Integer sectionId = sectionManager.insert(section2);
-		
-		
+	
 		return "home";
 	}
 
