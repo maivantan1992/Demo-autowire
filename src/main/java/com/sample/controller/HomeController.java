@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sample.entity.Section;
-import com.sample.entity.User;
 import com.sample.manager.ISectionManager;
 import com.sample.manager.IUserManager;
 
