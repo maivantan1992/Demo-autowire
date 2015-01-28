@@ -1,6 +1,7 @@
 package com.sample.dao;
 
 import java.io.Serializable;
+import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,11 @@ public class HBSpBasicDAO<E, PK extends Serializable> extends
 
 	public E get(PK id) {
 		return this.getHibernateTemplate().get(this.persistentClass, id);
+	}
+	
+	public List<E> getAll()
+	{
+		return this.getHibernateTemplate().loadAll(this.persistentClass);
 	}
 	
 	public PK insert(E entity)

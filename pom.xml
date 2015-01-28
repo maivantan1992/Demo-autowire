@@ -45,6 +45,7 @@
 			<version>${hibernate.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
@@ -56,6 +57,7 @@
 			<version>1.0.0.Final</version>
 			<scope>compile</scope>
 		</dependency>
+		 -->
 		<!-- Spring Dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -109,6 +111,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		
 		<!-- View Dependencies -->
 		<dependency>
 			<groupId>taglibs</groupId>

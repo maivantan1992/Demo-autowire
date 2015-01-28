@@ -1,5 +1,6 @@
 Hibernate using sessionFactory
 
+Notice: be careful between using hibernate4 and hibernate3. All project must be use 1 version of hibernate 4 or 3
 - Dependencies:
 	+ hibernate-core
 	+ hibernate-entitymanager

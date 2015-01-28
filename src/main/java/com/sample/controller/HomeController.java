@@ -1,5 +1,7 @@
 package com.sample.controller;
 
+import java.io.Console;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,7 +47,8 @@ public class HomeController {
 		
 		//Section section2 = new Section(section.getBu(), "TEST", section.getDepartments());
 		//Integer sectionId = sectionManager.insert(section2);		
+		System.out.println("Test -- Test -- Test");
 		return "home";
-	}
+	}	
 
 }
