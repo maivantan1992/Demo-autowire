@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.transaction.annotation.Transactional;
 
 public class HBSpBasicDAO<E, PK extends Serializable> extends
 		HibernateDaoSupport {
@@ -29,11 +30,17 @@ public class HBSpBasicDAO<E, PK extends Serializable> extends
 		return this.getHibernateTemplate().loadAll(this.persistentClass);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public PK insert(E entity)
 	{
-		PK genaratedKey = null;
-		genaratedKey = (PK) this.getHibernateTemplate().save(entity);
-		return genaratedKey;
+		return (PK) this.getHibernateTemplate().save(entity);
+	}
+	
+	@Transactional(readOnly=false)
+	public E update(E entity){		
+		this.getHibernateTemplate().merge(entity);
+		//this.getHibernateTemplate().flush();
+		return entity;
 	}
 	
 	

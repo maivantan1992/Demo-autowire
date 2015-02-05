@@ -7,7 +7,7 @@ public interface ISectionManager {
 
 	Integer insert(Section section);
 
-	boolean update(Section section);
+	Section update(Section section);
 
 	boolean delete(Section section);
 

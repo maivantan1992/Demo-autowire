@@ -17,11 +17,10 @@ public class SectionHBSpDAO extends HBSpBasicDAO<Section, Integer> implements
 		return this.get(sectionId);
 	}
 
-	@Override
-	public boolean update(Section section) {
-		// TODO Auto-generated method stub
-		return false;
-	}
+//	@Override
+//	public Section update(Section section) {
+//		return super.update(section);
+//	}
 
 	@Override
 	public boolean delete(Section section) {

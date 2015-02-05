@@ -23,7 +23,7 @@ public class SectionManagerImp implements ISectionManager {
 	}
 
 	@Override
-	public boolean update(Section section) {
+	public Section update(Section section) {
 		return this.sectionDAO.update(section);
 	}
 

@@ -42,8 +42,13 @@ public class HomeController {
 				"This is the message from the controller! <br>"+profileName);
 		//User user = userManager.getById(1);
 		//System.out.println("User email: "+ user.getEmployeeEmail());
-		Section section = sectionManager.getById(228);
+		Section section = sectionManager.getById(230);
+		section.setSection("Test D");
+		Section section2 = sectionManager.update(section);
+		
 		System.out.println("Section : "+ section.getSection());
+		
+		section2.setId(null);
 		
 		//Section section2 = new Section(section.getBu(), "TEST", section.getDepartments());
 		//Integer sectionId = sectionManager.insert(section2);		
